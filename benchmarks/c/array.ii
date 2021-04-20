@@ -1,7 +1,6 @@
-void assert(int cond);
-
-
-
+void assert(int condition);
+void ensures(int postcondition);
+extern int ret;
 
 
 
@@ -10,11 +9,14 @@ void assert(int cond);
 
 
 int max3_array(int arr[100], int i, int j, int k) {
-    if (arr[i] < arr[j]) {
-        if (arr[i] < arr[k]) return arr[i];
+     ensures(((ret == arr[i]) || (ret == arr[j]) || (ret == arr[k]))
+                 && (ret <= arr[i]) && (ret <= arr[j]) && (ret <= arr[k])); 
+
+    if (arr[i] > arr[j]) {
+        if (arr[i] > arr[k]) return arr[i];
     }
     else {
-        if (arr[j] < arr[k]) return arr[j];
+        if (arr[j] > arr[k]) return arr[j];
     }
     return arr[k];
 }
@@ -22,15 +24,15 @@ int max3_array(int arr[100], int i, int j, int k) {
 
 
 
-
-
-
 int max3_array_indirect(int arr[100], int is[3]) {
-    if (arr[is[0]] < arr[is[1]]) {
-        if (arr[is[0]] < arr[is[2]]) return arr[is[0]];
+     ensures(((ret == arr[is[0]]) || (ret == arr[is[1]]) || (ret == arr[is[2]]))
+                  && (ret <= arr[is[0]]) && (ret <= arr[is[1]]) && (ret <= arr[is[2]])); 
+
+    if (arr[is[0]] > arr[is[1]]) {
+        if (arr[is[0]] > arr[is[2]]) return arr[is[0]];
     }
     else {
-        if (arr[is[1]] < arr[is[2]]) return arr[is[1]];
+        if (arr[is[1]] > arr[is[2]]) return arr[is[1]];
     }
     return arr[is[2]];
 }

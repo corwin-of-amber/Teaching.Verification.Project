@@ -1,36 +1,38 @@
-void assert(int cond);
+void assert(int condition);
+void ensures(int postcondition);
+extern int ret;
 
 #define N 100
 #define SWAP(X,Y) { tmp = (X); (X) = (Y); (Y) = tmp; }
 
 /**
  * Computes the maximal of three array elements.
- *
- * @ensures ((ret == arr[i]) || (ret == arr[j]) || (ret == arr[k]))
- *            && (ret <= arr[i]) && (ret <= arr[j]) && (ret <= arr[k])
  */
 int max3_array(int arr[N], int i, int j, int k) {
-    if (arr[i] < arr[j]) {
-        if (arr[i] < arr[k]) return arr[i];
+    /**/ ensures(((ret == arr[i]) || (ret == arr[j]) || (ret == arr[k]))
+                 && (ret <= arr[i]) && (ret <= arr[j]) && (ret <= arr[k])); /**/
+
+    if (arr[i] > arr[j]) {
+        if (arr[i] > arr[k]) return arr[i];
     }
     else {
-        if (arr[j] < arr[k]) return arr[j];
+        if (arr[j] > arr[k]) return arr[j];
     }
     return arr[k];
 }
 
 /**
  * Same, but indices are also given as an array.
- *
- * @ensures ((ret == arr[is[0]]) || (ret == arr[is[1]]) || (ret == arr[is[2]]))
- *            && (ret <= arr[is[0]]) && (ret <= arr[is[1]]) && (ret <= arr[is[2]])
  */
 int max3_array_indirect(int arr[N], int is[3]) {
-    if (arr[is[0]] < arr[is[1]]) {
-        if (arr[is[0]] < arr[is[2]]) return arr[is[0]];
+    /**/ ensures(((ret == arr[is[0]]) || (ret == arr[is[1]]) || (ret == arr[is[2]]))
+                  && (ret <= arr[is[0]]) && (ret <= arr[is[1]]) && (ret <= arr[is[2]])); /**/
+
+    if (arr[is[0]] > arr[is[1]]) {
+        if (arr[is[0]] > arr[is[2]]) return arr[is[0]];
     }
     else {
-        if (arr[is[1]] < arr[is[2]]) return arr[is[1]];
+        if (arr[is[1]] > arr[is[2]]) return arr[is[1]];
     }
     return arr[is[2]];
 }

@@ -1,13 +1,14 @@
+void ensures(int postcondition);
+extern int ret;
 
 /**
  * Computes the maximal of three integers.
- *
- * @ensures ((ret == x) || (ret == y) || (ret == z))
- *            && (ret <= x) && (ret <= y) && (ret <= z)
  */
 int max3_v1(int x, int y, int z) {
-    if (x < y) {
-        if (x < z) return x;
+    /**/ ensures(((ret == x) || (ret == y) || (ret == z))
+                 && (ret >= x) && (ret >= y) && (ret >= z)); /**/
+    if (x > y) {
+        if (x > z) return x;
         else return z;
     }
     else {
@@ -20,11 +21,13 @@ int max3_v1(int x, int y, int z) {
  * (same)
  */
 int max3_v2(int x, int y, int z) {
-    if (x < y) {
-        if (x < z) return x;
+    /**/ ensures(((ret == x) || (ret == y) || (ret == z))
+                 && (ret >= x) && (ret >= y) && (ret >= z)); /**/
+    if (x > y) {
+        if (x > z) return x;
     }
     else {
-        if (y < z) return y;
+        if (y > z) return y;
     }
     return z;
 }
@@ -33,8 +36,10 @@ int max3_v2(int x, int y, int z) {
  * (still same)
  */
 int max3_v3(int x, int y, int z) {
+    /**/ ensures(((ret == x) || (ret == y) || (ret == z))
+                 && (ret >= x) && (ret >= y) && (ret >= z)); /**/
     int tmp = x;
-    if (y < tmp) tmp = y;
-    if (z < tmp) tmp = z;
+    if (y > tmp) tmp = y;
+    if (z > tmp) tmp = z;
     return tmp;
 }
