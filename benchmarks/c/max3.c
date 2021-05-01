@@ -12,7 +12,7 @@ int max3_v1(int x, int y, int z) {
         else return z;
     }
     else {
-        if (y < z) return y;
+        if (y > z) return y;
         else return z;
     }
 }
