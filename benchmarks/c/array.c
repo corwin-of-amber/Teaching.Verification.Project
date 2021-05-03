@@ -10,7 +10,7 @@ extern int ret;
  */
 int max3_array(int arr[N], int i, int j, int k) {
     /**/ ensures(((ret == arr[i]) || (ret == arr[j]) || (ret == arr[k]))
-                 && (ret <= arr[i]) && (ret <= arr[j]) && (ret <= arr[k])); /**/
+                 && (ret >= arr[i]) && (ret >= arr[j]) && (ret >= arr[k])); /**/
 
     if (arr[i] > arr[j]) {
         if (arr[i] > arr[k]) return arr[i];
@@ -26,7 +26,7 @@ int max3_array(int arr[N], int i, int j, int k) {
  */
 int max3_array_indirect(int arr[N], int is[3]) {
     /**/ ensures(((ret == arr[is[0]]) || (ret == arr[is[1]]) || (ret == arr[is[2]]))
-                  && (ret <= arr[is[0]]) && (ret <= arr[is[1]]) && (ret <= arr[is[2]])); /**/
+                  && (ret >= arr[is[0]]) && (ret >= arr[is[1]]) && (ret >= arr[is[2]])); /**/
 
     if (arr[is[0]] > arr[is[1]]) {
         if (arr[is[0]] > arr[is[2]]) return arr[is[0]];

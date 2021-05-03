@@ -1499,8 +1499,8 @@
                    }
                   },
                   {
-                   "type": "<",
-                   "text": "<",
+                   "type": ">",
+                   "text": ">",
                    "children": null,
                    "range": {
                     "startLineNumber": 15,

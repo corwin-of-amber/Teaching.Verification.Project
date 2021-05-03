@@ -1187,8 +1187,8 @@
                        }
                       },
                       {
-                       "type": "LE_OP",
-                       "text": "<=",
+                       "type": "GE_OP",
+                       "text": ">=",
                        "children": null,
                        "range": {
                         "startLineNumber": 13,
@@ -1321,8 +1321,8 @@
                      }
                     },
                     {
-                     "type": "LE_OP",
-                     "text": "<=",
+                     "type": "GE_OP",
+                     "text": ">=",
                      "children": null,
                      "range": {
                       "startLineNumber": 13,
@@ -1455,8 +1455,8 @@
                    }
                   },
                   {
-                   "type": "LE_OP",
-                   "text": "<=",
+                   "type": "GE_OP",
+                   "text": ">=",
                    "children": null,
                    "range": {
                     "startLineNumber": 13,
@@ -3431,8 +3431,8 @@
                        }
                       },
                       {
-                       "type": "LE_OP",
-                       "text": "<=",
+                       "type": "GE_OP",
+                       "text": ">=",
                        "children": null,
                        "range": {
                         "startLineNumber": 29,
@@ -3609,8 +3609,8 @@
                      }
                     },
                     {
-                     "type": "LE_OP",
-                     "text": "<=",
+                     "type": "GE_OP",
+                     "text": ">=",
                      "children": null,
                      "range": {
                       "startLineNumber": 29,
@@ -3787,8 +3787,8 @@
                    }
                   },
                   {
-                   "type": "LE_OP",
-                   "text": "<=",
+                   "type": "GE_OP",
+                   "text": ">=",
                    "children": null,
                    "range": {
                     "startLineNumber": 29,
