@@ -1,0 +1,35 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#ide {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#ide > div {
+    padding: 9px;
+    border-right: 1px solid #ccc;
+}
+
+#ide > #panel-editor {
+    flex-grow: 1;
+    padding: 0;
+}
+
+#panel-editor .CodeMirror {
+    height: 100%;
+    background: #eee;
+}
+
+#panel-output {
+    min-width: 40em;
+}

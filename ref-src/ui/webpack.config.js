@@ -4,7 +4,7 @@ const webpack = require('webpack'),
 module.exports = (env, argv) => [{
   name: 'ide-project',
   mode: argv.mode || 'development',
-  entry: './index.ts',
+  entry: './src/index.ts',
   devtool: argv.mode !== 'production' ? "source-map" : undefined,
   stats: {
     hash: false, version: false, modules: false  // reduce verbosity
