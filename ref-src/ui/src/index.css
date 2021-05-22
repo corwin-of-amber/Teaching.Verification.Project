@@ -20,6 +20,15 @@ html, body {
     border-right: 1px solid #ccc;
 }
 
+#ide > #panel-benchmarks ul {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+#ide > #panel-benchmarks li::before {
+    content: "‣ ";
+}
+
 #ide > #panel-editor {
     flex-grow: 1;
     padding: 0;
@@ -32,4 +41,9 @@ html, body {
 
 #panel-output {
     min-width: 40em;
+}
+
+#panel-output #output {
+    font-family: Courier, monospace;
+    white-space: pre;
 }
