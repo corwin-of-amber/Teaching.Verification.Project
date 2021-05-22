@@ -1,0 +1,23 @@
+{
+  "name": "ref-src",
+  "version": "0.1.0",
+  "description": "A sample UI for the project",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "FLASK_ENV=development flask run"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "codemirror": "^5.61.1"
+  },
+  "devDependencies": {
+    "@types/codemirror": "^5.60.0",
+    "css-loader": "^5.2.5",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^9.2.1",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0"
+  }
+}
