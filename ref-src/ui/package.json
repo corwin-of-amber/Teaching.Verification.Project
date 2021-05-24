@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "FLASK_ENV=development flask run"
+    "start": "cross-env FLASK_ENV=development python -m flask run"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@types/codemirror": "^5.60.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^5.2.5",
     "style-loader": "^2.0.0",
     "ts-loader": "^9.2.1",
